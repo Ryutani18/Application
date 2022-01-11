@@ -1,0 +1,83 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+/* posts/index ================================ */
+.user-name {
+  margin-top: 10px;
+}
+
+.user-name a {
+  font-weight: bold;
+  color: #000000;
+  text-decoration: none;
+}
+
+.posts-index-item {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.posts-index-item a {
+  color: #000000;
+  text-decoration: none;
+  padding: 20px 0;
+}
+
+.posts-index-item img {
+  width: 40px;
+  height: 40px;
+  margin-top: 30px;
+  border-radius: 40%;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+}
+
+/* posts/show ================================ */
+.posts-show-item {
+  width: 40%;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding-bottom: 20px;
+}
+
+.posts-show-item img {
+  width: 60px;
+  height: 60px;
+  margin-top: 30px;
+  border-radius: 40%;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+}
+
+.post-content {
+  padding: 20px 0;
+}
+
+textarea {
+  font-size: 20px;
+  padding: 10px;
+  min-height: 80px;
+  border: 1px solid rgb(216, 218, 223);
+  // resize: none;
+}
+
+.likes {
+  margin-top: 10px;
+}
+
+.tags {
+  margin-top: 10px;
+}
+
+.tag-items {
+  display: inline-flex;
+}
+
+.like-btn {
+  color: #8899a6;
+}
+  
+.like-btn-unlike {
+  color: #ff2581;
+}
+

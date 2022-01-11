@@ -1,0 +1,10 @@
+<% if Like.find_by(user_id: @current_user.id, post_id: post.id) %>
+  <%= link_to post_like_path(post), method: :delete, remote: true do %>
+    <i class="fa fa-heart like-btn-unlike"></i>
+  <% end %>
+<% else %>
+  <%= link_to post_like_path(post), method: :post, remote: true do %>
+    <i class="fa fa-heart like-btn"></i>
+  <% end %>
+<% end %>
+<%= Like.where(post_id: post.id).count %>

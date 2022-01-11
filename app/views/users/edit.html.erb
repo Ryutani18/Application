@@ -1,0 +1,23 @@
+<div class="main users-new">
+  <div class="container">
+    <h1 class="form-heading">プロフィールの編集</h1>
+    <%= form_tag @user, method: :patch do %>
+      <div class="form">
+          <% @user.errors.full_messages.each do |message| %>
+            <div class="form-error">
+              <%= message %>
+            </div>
+          <% end %>
+        <div class="form-body">
+        <p>お名前</p>
+        <input name="name" value="<%= @user.name %>">
+        <p>プロフィール画像</p>
+        <input type="file" name="image" class="upload">
+        <p>メールアドレス</p>
+        <input name="email" value="<%= @user.email %>">
+        <br><input type="submit" value="保存">
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

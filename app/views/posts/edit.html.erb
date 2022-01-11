@@ -1,0 +1,16 @@
+<div class="main posts-new">
+  <h3 class="form-heading">編集する</h3>
+  <%= form_tag @post, method: :patch do %>
+    <div class="form">
+        <% @post.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+          </div>
+        <% end %>
+      <div class="form-body">
+      <textarea name="content"><%= @post.content %></textarea>
+      <br><input type="submit" value="保存">
+      </div>
+    </div>
+  <% end %>
+</div>

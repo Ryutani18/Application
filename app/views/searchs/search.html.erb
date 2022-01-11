@@ -1,0 +1,13 @@
+<div class="main search">
+  <div class="container">
+    <h3 class="form-heading">検索する</h3>
+      <div class="form">
+        <div class="form-body">
+          <%= form_tag '/search/index' do %>
+            <input name="search">
+            <br><input type="submit" value="検索">
+          <% end %>
+        </div>
+      </div>
+  </div>
+</div>

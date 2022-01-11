@@ -1,0 +1,10 @@
+<div class="main tags-index">
+  <h3>タグー一覧</h3>
+  <div class="content">
+    <% @tags.each do |tag| %>
+      <div class="tags">
+        <%= link_to "##{tag.tag_name}", "/tags/#{tag.tag_name}" %>
+      </div>
+    <% end %>
+  </div>
+</div>

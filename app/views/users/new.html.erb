@@ -1,0 +1,21 @@
+<div class="main users-new">
+  <h1 class="form-heading">新規登録</h1>
+  <%= form_tag users_path, method: :post do %>
+    <div class="form">
+      <% @user.errors.full_messages.each do |message| %>
+        <div class="form-error">
+          <%= message %>
+        </div>
+      <% end %>
+    <div class="form-body">
+      <p>お名前</p>
+      <input name="name" value="<%= @user.name %>">
+      <p>メールアドレス</p>
+      <input name="email" value="<%= @user.email %>">
+      <p>パスワード</p>
+      <input type="password" name="password" value="<%= @user.password %>">
+      <br><input type="submit" value="新規登録">
+      </div>
+    </div>
+  <% end %>
+</div>

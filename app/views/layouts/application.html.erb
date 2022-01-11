@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Application</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= javascript_pack_tag 'hello_vue' %>
+    <%= stylesheet_pack_tag 'hello_vue' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <div class="gakushu"><%= link_to "学習道", root_path %></div>
+      <div class="header-list">
+        <ul>
+          <li><%= link_to "このwebページについて", root_path %></li>
+          <% if @current_user == nil %>
+            <li><%= link_to "新規登録", signup_path %></li>
+          <% else %>
+            <li><%= link_to "新規投稿", new_post_path %></li>
+          <% end %>
+          <li><%= link_to "投稿一覧", posts_path %></li>
+          <li><%= link_to "ユーザー一覧", users_path %></li>
+          <li><%= link_to "タグ一覧", tags_path %></li>
+          <% if @current_user %>
+            <li><%= link_to @current_user.name, @current_user %></li>
+          <% end %>
+          <li><%= link_to "検索", search_path %></li>
+        </ul>
+      </div>
+      <div class="header-right">
+        <% if @current_user == nil %>
+          <%= link_to "ログイン", login_path %>
+        <% else %>
+          <%= link_to "ログアウト", logout_path %>
+        <% end %>
+      </div>
+    </header>
+
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <%= yield %>
+      <footer>
+        <div class="footer-logo"><%= link_to "Gakushudo", root_path %></div>
+          <div class="footer-list">
+            <ul>
+              <li><%= link_to "会社概要", root_path %></li>
+              <li><%= link_to "採用", root_path %></li>
+              <li><%= link_to "お問い合わせ", root_path %></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+  </body>
+</html>

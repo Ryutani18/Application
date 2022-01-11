@@ -1,0 +1,164 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body {
+  font-family: "Avenir Next";
+}
+
+li {
+  list-style: none;
+}
+
+.btn {
+  color: white;
+  text-decoration: none;
+}
+
+.logo{
+  color: white;
+  text-decoration: none;
+}
+
+header {
+  background-color: #26d0c9;
+  height: 90px;
+}
+
+.gakushu a {
+  color: white;
+  text-decoration: none;
+  font-size: 36px;
+  line-height: 90px;
+  padding: 0 40px;
+  float: left;
+}
+
+.header-list li {
+  line-height: 90px;
+  padding: 0px 30px;
+  float: left;
+}
+
+.header-list li:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.header-list li a {
+  color: white;
+  text-decoration: none;
+}
+
+.header-right {
+  float: right;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: all 0.5s;
+}
+
+.header-right:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.header-right a {
+  color: white;
+  line-height: 90px;
+  padding: 0 30px;
+  display: block;
+  text-decoration: none;
+}
+
+.main {
+  text-align: center;
+}
+
+.greeting h1 {
+  font-size: 90px;
+  padding: 120px 0 70px 60px;
+  font-style: bold;
+  transition: all 1s;
+}
+
+.greeting h2 {
+  font-size: 50px;
+  padding: 0 0 70px 60px;
+}
+
+.subject {
+  height: 400px;
+  padding-left: 60px;
+}
+
+.subject h3 {
+  border-bottom: 1px solid black;
+}
+
+.image {
+  float: left;
+  width: 20%
+}
+
+.image img {
+  transition-duration: 0.5s;
+}
+
+.image img:hover {
+  opacity: 0.5;
+}
+
+.image a {
+  color: black;
+}
+
+footer {
+  background-color: #2f5167;
+  height: 200px;
+}
+
+.footer-logo {
+  font-size: 36px;
+  padding: 30px;
+  float: left;
+}
+
+.footer-logo a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-list {
+  float: right;
+  margin-top: 15px;
+}
+
+.footer-list li {
+  padding: 0 36px 15px 0;
+}
+
+.footer-list li a {
+  color: white;
+  text-decoration: none;
+}
+
+.main {
+  margin: 40px 0;
+}
+
+.container {
+  width: 60%;
+  margin: 0 auto;
+}
+
+input[type="submit"] {
+  margin: 10px 0 0;
+}

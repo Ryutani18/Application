@@ -1,0 +1,19 @@
+<div class="main posts-index">
+  <h2>投稿一覧</h2>
+  <div class="container">
+    <% @posts.each do |post| %>
+      <div class="posts-index-item">
+        <%= link_to post.user do %>
+          <img src="<%= "/user_images/#{post.user.image_name}" %>">
+          <div class="user-name"><%= link_to post.user.name, post.user %></div>
+        <% end %>
+        <%= link_to post do %>
+          <div class="post-content"><%= post.content %></div>
+        <% end %>
+        <div id="like_<%= post.id %>">
+          <%= render partial: 'likes/like', locals: {post: post} %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

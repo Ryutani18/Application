@@ -1,0 +1,93 @@
+<div class="main searchs-index">
+  <div class="form-body">
+    <%= form_tag '/search/index' do %>
+      <input name="search" value="<%= params[:search] %>">
+      <input type="submit" value="検索">
+    <% end %>
+  </div>
+  <h2>検索結果</h2>
+  <div class="searchs">
+    <input id="posts" type="radio" name="search_item" checked>
+    <label class="search_item" for="posts">投稿</label>
+    <input id="users" type="radio" name="search_item">
+    <label class="search_item" for="users">ユーザー</label>
+    <input id="tags" type="radio" name="search_item" checked>
+    <label class="search_item" for="tags">タグ</label>
+    <div class="search_content" id="posts_content">
+      <div class="search_content_description">
+        <p class="c-txtsp">
+          <div class="container">
+            <% if @posts.present? %>
+              <% @posts.each do |post| %>
+                <div class="posts-index-item">
+                  <%= link_to post.user do %>
+                    <img src="<%= "/user_images/#{post.user.image_name}" %>">
+                    <div class="user-name"><%= link_to post.user.name, post.user %></div>
+                  <% end %>
+                  <%= link_to post do %>
+                    <div class="post-content"><%= post.content %></div>
+                  <% end %>
+                  <div id="like_<%= post.id %>">
+                    <%= render partial: 'likes/like', locals: {post: post} %>
+                  </div>
+                </div>
+              <% end %>
+            <% else %>
+              <p>検索結果がありませんでした</p>
+            <% end %>
+          </div>
+        </p>
+      </div>
+    </div>
+    <div class="search_content" id="users_content">
+      <div class="search_content_description">
+        <p class="c-txtsp">
+          <div class="container">
+            <% if @users.present? %>
+              <% @users.each do |user| %>
+                <div class="users-index-item">
+                  <img src="<%= "/user_images/#{user.image_name}" %>">
+                  <%= link_to user do %>
+                    <div class="user-name"><%= user.name %></div>
+                  <% end %>
+                  <div class="follows">
+                    <% if @current_user != user %>
+                      <% if Relationship.find_by(followed_id: @current_user.id, follower_id: user.id) %>
+                        <%= link_to user_relationship_path(user), method: :delete do %>
+                          <input type="submit" value="フォローを解除" class="unfollow-button">
+                        <% end %>
+                      <% else %>
+                        <%= link_to user_relationship_path(user), method: :post do %>
+                          <input type="submit" value="フォローする" class="follow-button">
+                        <% end %>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+            <% else %>
+              <p>検索結果がありませんでした</p>
+            <% end %>
+          </div>
+        </p>
+      </div>
+    </div>
+    <div class="search_content" id="tags_content">
+      <div class="search_content_description">
+        <p class="c-txtsp">
+          <% if @tags.present? %>
+            <div class="content">
+              <% @tags.each do |tag| %>
+                <div class="tags">
+                  <%= link_to "##{tag.tag_name}", "/tags/#{tag.tag_name}" %>
+                </div>
+              <% end %>
+            </div>
+          <% else %>
+            <p>検索結果がありませんでした</p>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

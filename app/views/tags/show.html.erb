@@ -1,0 +1,17 @@
+<div class="main posts-index">
+  <h2><%= @tag.tag_name %></h2>
+  <div class="container">
+    <% @posts.each do |post| %>
+      <div class="posts-index-item">
+        <img src="<%= "/user_images/#{post.user.image_name}" %>">
+        <span class="user-name"><%= link_to post.user.name, post.user %></span>
+        <%= link_to post do %>
+          <div class="post-content"><%= post.content %></div>
+        <% end %>
+        <div id="like_<%= post.id %>">
+          <%= render partial: 'likes/like', locals: {post: post} %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

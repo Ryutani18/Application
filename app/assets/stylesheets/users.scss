@@ -1,0 +1,145 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+/* users/index ================================ */
+.users-index-item {
+  width: 60%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+}
+
+.users-index-item a {
+  color: #000000;
+  text-decoration: none;
+  padding: 20px 0;
+}
+
+.users-index-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 40%;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+}
+
+/* users/show ================================ */
+.users-show-item img {
+  width: 80px;
+  height: 80px;
+  border-radius: 40%;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+  text-align: center;
+}
+
+.user-name {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.followers-index-item {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+}
+
+.followers-index-item a {
+  color: #000000;
+  text-decoration: none;
+  padding: 20px 0;
+}
+
+.followers-index-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 40%;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+}
+
+.followeds-index-item {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+}
+
+.followeds-index-item a {
+  color: #000000;
+  text-decoration: none;
+  padding: 20px 0;
+}
+
+.followeds-index-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 40%;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+}
+
+.information-lists {
+  padding-inline-start: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.information-lists li {
+  width: 100px;
+  height: 100px;
+}
+
+.upload {
+  margin-left: 90px;
+}
+
+/*タブ切り替え全体のスタイル*/
+.tabs {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 60%;
+  margin: 40px auto 40px;
+}
+
+/*タブのスタイル*/
+.tab_item {
+  width: calc(100%/5);
+  height: 60px;
+  background-color: #fff;
+  line-height: 60px;
+  font-size: 16px;
+  text-align: center;
+  color: #565656;
+  display: block;
+  float: left;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.tab_item:hover {
+  opacity: 0.75;
+}
+
+/*ラジオボタンを全て消す*/
+input[name="tab_item"] {
+  display: none;
+}
+
+/*タブ切り替えの中身のスタイル*/
+.tab_content {
+  display: none;
+  clear: both;
+}
+
+/*選択されているタブのコンテンツのみを表示*/
+#posts:checked ~ #posts_content,
+#likes:checked ~ #likes_content,
+#followers:checked ~ #followers_content,
+#followeds:checked ~ #followeds_content {
+  display: block;
+}
+
+/*選択されているタブのスタイルを変える*/
+.tabs input:checked + .tab_item {
+  border-bottom: 3px solid #26d0c9;
+  color: #565656;
+}
+

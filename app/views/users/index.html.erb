@@ -1,0 +1,24 @@
+<div class="main users-index">
+  <h2>ユーザー一覧</h2>
+  <div class="container">
+    <% @users.each do |user| %>
+      <div class="users-index-item">
+        <%= link_to user do %>
+          <img src="<%= "/user_images/#{user.image_name}" %>">
+          <div class="user-name"><%= user.name %></div>
+        <% end %>
+        <% if @current_user != user %>
+          <% if Relationship.find_by(followed_id: @current_user.id, follower_id: user.id) %>
+            <%= link_to user_relationship_path(user), method: :delete do %>
+              <input type="submit" value="フォローを解除" class="unfollow-button">
+            <% end %>
+          <% else %>
+            <%= link_to user_relationship_path(user), method: :post do %>
+              <input type="submit" value="フォローする" class="follow-button">
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

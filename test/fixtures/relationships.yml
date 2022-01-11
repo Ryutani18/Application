@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  followed_id: MyString
+  integer,: MyString
+  follower_id: MyString
+  integer: MyString
+
+two:
+  followed_id: MyString
+  integer,: MyString
+  follower_id: MyString
+  integer: MyString
